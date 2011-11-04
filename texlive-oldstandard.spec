@@ -1,3 +1,9 @@
+# revision 19512
+# category Package
+# catalog-ctan /fonts/oldstandard
+# catalog-date 2010-07-10 11:28:49 +0200
+# catalog-license ofl
+# catalog-version 2.0.2
 Name:		texlive-oldstandard
 Version:	2.0.2
 Release:	1
@@ -72,6 +78,7 @@ as XeTeX and LuaTeX.
 %doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Bold.sfd
 %doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Italic.sfd
 %doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Regular.sfd
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -82,3 +89,5 @@ as XeTeX and LuaTeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
