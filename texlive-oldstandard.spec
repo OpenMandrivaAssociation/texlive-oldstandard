@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Old Standard is supposed to reproduce the actual printing style
@@ -35,20 +32,12 @@ Classical Greek and Latin, and many more. Old Standard works
 with TeX engines that directly support OpenType features, such
 as XeTeX and LuaTeX.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -79,7 +68,6 @@ as XeTeX and LuaTeX.
 %doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Bold.sfd
 %doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Italic.sfd
 %doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Regular.sfd
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -90,5 +78,3 @@ as XeTeX and LuaTeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
