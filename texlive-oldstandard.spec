@@ -1,12 +1,12 @@
-# revision 19512
+# revision 29349
 # category Package
 # catalog-ctan /fonts/oldstandard
-# catalog-date 2010-07-10 11:28:49 +0200
+# catalog-date 2012-11-14 11:47:31 +0100
 # catalog-license ofl
 # catalog-version 2.0.2
 Name:		texlive-oldstandard
 Version:	2.0.2
-Release:	2
+Release:	3
 Summary:	Old Standard: A Unicode Font for Classical and Medieval Studies
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/oldstandard
@@ -20,13 +20,13 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 
 %description
-Old Standard is supposed to reproduce the actual printing style
+Old Standard is designed to reproduce the actual printing style
 of the early 20th century, reviving a specific type of Modern
 (classicist) style of serif typefaces, very commonly used in
 various editions of the late 19th and early 20th century, but
-almost completely abandoned later. It supports typesetting of
-Old and Middle English, Old Icelandic, Cyrillic (with
-historical characters, extensions for Old Slavonic and
+almost completely abandoned later. The font supports
+typesetting of Old and Middle English, Old Icelandic, Cyrillic
+(with historical characters, extensions for Old Slavonic and
 localised forms), Gothic transliterations, critical editions of
 Classical Greek and Latin, and many more. Old Standard works
 with TeX engines that directly support OpenType features, such
@@ -78,17 +78,3 @@ as XeTeX and LuaTeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.0.2-2
-+ Revision: 754509
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.0.2-1
-+ Revision: 719158
-- texlive-oldstandard
-- texlive-oldstandard
-- texlive-oldstandard
-- texlive-oldstandard
-
