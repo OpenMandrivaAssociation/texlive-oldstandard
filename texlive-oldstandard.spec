@@ -1,19 +1,12 @@
-# revision 29349
-# category Package
-# catalog-ctan /fonts/oldstandard
-# catalog-date 2012-11-14 11:47:31 +0100
-# catalog-license ofl
-# catalog-version 2.0.2
 Name:		texlive-oldstandard
-Version:	2.0.2
-Release:	11
+Version:	2.2
+Release:	1
 Summary:	Old Standard: A Unicode Font for Classical and Medieval Studies
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/oldstandard
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -42,39 +35,20 @@ as XeTeX and LuaTeX.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/fonts/opentype/public/oldstandard/OldStandard-Bold.otf
-%{_texmfdistdir}/fonts/opentype/public/oldstandard/OldStandard-Italic.otf
-%{_texmfdistdir}/fonts/opentype/public/oldstandard/OldStandard-Regular.otf
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/FONTLOG.txt
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/OFL-FAQ.txt
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/OFL.txt
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/README
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/didot-de.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/didot-fr.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/gendocs.sh
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/genfonts.sh
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/greek-contextual.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/oldstand-manual.pdf
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/oldstand-manual.tex
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/opentype.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/ost-generate.py
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/serbian.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/spadmin-add.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/spadmin.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/stand-su.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/teubner.png
-%doc %{_texmfdistdir}/doc/fonts/oldstandard/truetype.png
-#- source
-%doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Bold.sfd
-%doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Italic.sfd
-%doc %{_texmfdistdir}/source/fonts/oldstandard/OldStandard-Regular.sfd
+%{_texmfdistdir}/fonts/map/dvips
+%{_texmfdistdir}/fonts/enc/dvips
+%{_texmfdistdir}/fonts/opentype/public/oldstandard
+%{_texmfdistdir}/fonts/tfm/public/oldstandard
+%{_texmfdistdir}/fonts/type1/public/oldstandard
+%{_texmfdistdir}/fonts/vf/public/oldstandard
+%doc %{_texmfdistdir}/doc/fonts/oldstandard
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a0 -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts doc source %{buildroot}%{_texmfdistdir}
+cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
