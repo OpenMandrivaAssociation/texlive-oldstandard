@@ -1,12 +1,12 @@
 Name:		texlive-oldstandard
-Version:	2.2
-Release:	2
+Version:	64464
+Release:	1
 Summary:	Old Standard: A Unicode Font for Classical and Medieval Studies
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/oldstandard
 License:	OFL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +26,12 @@ with TeX engines that directly support OpenType features, such
 as XeTeX and LuaTeX.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -45,7 +45,7 @@ as XeTeX and LuaTeX.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
