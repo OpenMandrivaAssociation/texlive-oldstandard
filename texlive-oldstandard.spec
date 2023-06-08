@@ -1,6 +1,6 @@
 Name:		texlive-oldstandard
-Version:	64464
-Release:	2
+Version:	67201
+Release:	1
 Summary:	Old Standard: A Unicode Font for Classical and Medieval Studies
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/oldstandard
