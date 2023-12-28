@@ -1,5 +1,5 @@
 Name:		texlive-oldstandard
-Version:	69153
+Version:	69185
 Release:	1
 Summary:	Old Standard: A Unicode Font for Classical and Medieval Studies
 Group:		Publishing
