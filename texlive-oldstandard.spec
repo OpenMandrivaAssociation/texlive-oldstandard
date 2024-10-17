@@ -3,7 +3,7 @@ Version:	70428
 Release:	1
 Summary:	Old Standard: A Unicode Font for Classical and Medieval Studies
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/oldstandard
+URL:		https://www.ctan.org/tex-archive/fonts/oldstandard
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/oldstandard.doc.r%{version}.tar.xz
